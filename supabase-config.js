@@ -1,7 +1,7 @@
 // supabase-config.js
-// Replace the values below with your Supabase credentials from the Supabase Console.
-// Go to: Supabase Console -> Project Settings -> API
+// Set your active Supabase URL and key here to enable Cloud Supabase integration.
+// If using Local Storage mode, leave url as "YOUR_SUPABASE_URL".
 const supabaseConfig = {
-  url: "https://pxovcwdltctnziaeombj.supabase.co",
-  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4b3Zjd2RsdGN0bnppYWVvbWJqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0MjU0OTcsImV4cCI6MjA5NzAwMTQ5N30.fyQtl7i93CNeG0A0o51gyCiSk88Yxq9s59HAxUe66L8"
+  url: "YOUR_SUPABASE_URL",
+  anonKey: "YOUR_SUPABASE_ANON_KEY"
 };

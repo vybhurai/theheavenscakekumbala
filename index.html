@@ -18,7 +18,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=50">
 </head>
 <body>
 
@@ -45,10 +45,8 @@
       <nav aria-label="Main Navigation">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#categories" class="nav-link">Categories</a></li>
           <li><a href="#featured" class="nav-link">Cakes</a></li>
-          <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#reviews" class="nav-link">Reviews</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <!-- Mobile CTA inclusion -->
@@ -58,6 +56,9 @@
       </nav>
 
       <div class="nav-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=HWVV%2BRH%20Kumbla,%20Kerala" target="_blank" rel="noopener" class="nav-action-btn" aria-label="Store Location" title="Store Location (Google Maps)" style="color: var(--gold); border-color: var(--gold); background: rgba(212, 175, 55, 0.15); box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);">
+          <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+        </a>
         <button onclick="openAdminModal(); return false;" class="nav-action-btn" aria-label="Open Admin Portal" title="Admin Portal">
           <i data-lucide="lock" style="width: 16px; height: 16px;"></i>
         </button>
@@ -104,102 +105,24 @@
             <button class="mood-tab" data-mood="harvest">Fresh Harvest</button>
           </div>
 
-          <div class="hero-cta">
+          <div class="hero-cta" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
             <a href="#featured" class="btn btn-primary">
               Explore Cakes <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
             </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=HWVV%2BRH%20Kumbla,%20Kerala" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color: var(--gold); color: var(--gold); display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.1);">
+              <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i> Find Location
+            </a>
             <a href="#contact" class="btn btn-secondary">Order Custom Cake</a>
           </div>
-          <div class="hero-coordinates">
-            <span>12.5794° N, 74.9405° E</span>
+          <a href="https://www.google.com/maps/search/?api=1&query=HWVV%2BRH%20Kumbla,%20Kerala" target="_blank" rel="noopener" class="hero-coordinates" style="text-decoration: none; cursor: pointer;" title="Click to view store directions in Google Maps">
+            <i data-lucide="map-pin" style="width: 14px; height: 14px; color: var(--gold);"></i>
+            <span>Muliyadka Complex, Kumbla, Kerala</span>
             <span class="coordinate-bullet">✦</span>
-            <span>KUMBLA, KERALA</span>
-          </div>
+            <span style="color: var(--gold); font-weight: 600; text-decoration: underline;">Get Directions</span>
+          </a>
         </div>
 
         <!-- Hero canvas was removed to support centered cinematic view -->
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-visual reveal reveal-left">
-          <div class="about-triptych">
-            <!-- Triptych Image 1 -->
-            <div class="triptych-frame frame-1 active" data-triptych-tab="standard">
-              <div class="triptych-inner">
-                <img src="images/about_ingredients.jpg" alt="Premium baking ingredients close-up" class="triptych-img">
-              </div>
-              <div class="triptych-caption">01 / INGREDIENT</div>
-            </div>
-
-            <!-- Triptych Image 2 -->
-            <div class="triptych-frame frame-2" data-triptych-tab="story">
-              <div class="triptych-inner">
-                <img src="images/about_crafting.jpg" alt="Artisan cake crafting details" class="triptych-img">
-              </div>
-              <div class="triptych-caption">02 / TECHNIQUE</div>
-            </div>
-
-            <!-- Triptych Image 3 -->
-            <div class="triptych-frame frame-3" data-triptych-tab="promise">
-              <div class="triptych-inner">
-                <img src="images/about_display.jpg" alt="Freshly displayed pastry display" class="triptych-img">
-              </div>
-              <div class="triptych-caption">03 / CREATION</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-content reveal reveal-right delay-2">
-          <span class="about-subtitle">Our Sweet Philosophy</span>
-          <h2 class="about-title">Handcrafted Luxury, Baked for Your Memories</h2>
-          
-          <!-- Interactive Tab Nav -->
-          <div class="about-tabs-nav">
-            <button class="about-tab-btn active" data-tab="story" onclick="switchAboutTab('story')">Our Story</button>
-            <button class="about-tab-btn" data-tab="standard" onclick="switchAboutTab('standard')">Our Standards</button>
-            <button class="about-tab-btn" data-tab="promise" onclick="switchAboutTab('promise')">Our Promise</button>
-          </div>
-          
-          <!-- Tab Contents -->
-          <div class="about-tab-content-wrapper">
-            <div id="about-tab-story" class="about-tab-content active">
-              <p class="about-text">At The Heaven Cake, we believe every cake has a story to tell. Established in Kumbla, Kerala, we have dedicated ourselves to creating premium, luxurious desserts that bring sweet smiles to your life's most precious celebrations.</p>
-              <p class="about-text">From grand multi-tiered wedding cakes to intimate birthday cupcakes, everything is crafted using only premium-sourced ingredients, baked fresh daily with artisan passion.</p>
-              <ul class="about-points">
-                <li class="about-point"><i data-lucide="check" class="about-point-icon"></i> Freshly baked every single day</li>
-                <li class="about-point"><i data-lucide="check" class="about-point-icon"></i> Tailored custom cake creations</li>
-              </ul>
-            </div>
-            
-            <div id="about-tab-standard" class="about-tab-content">
-              <p class="about-text">We believe in pure, uncompromising quality. All of our batters, creams, and toppings are prepared fresh in our kitchen. We source organic flour, fresh farm dairy, and premium Belgian chocolate to craft a rich and decadent crumb.</p>
-              <p class="about-text">Good news for all dessert lovers: <strong>All our products are 100% Vegetarian (Eggless)</strong> by default. We do not use eggs, gelatin, or artificial animal fats.</p>
-              <ul class="about-points">
-                <li class="about-point"><i data-lucide="check" class="about-point-icon"></i> 100% premium quality organic ingredients</li>
-                <li class="about-point"><i data-lucide="check" class="about-point-icon"></i> 100% Eggless (Vegetarian) kitchen</li>
-              </ul>
-            </div>
-            
-            <div id="about-tab-promise" class="about-tab-content">
-              <p class="about-text">Every celebration deserves a showstopper. We collaborate closely with you to design a bespoke cake that matches your theme, colors, and flavor profile. From elegant semi-fondants to grand multi-tiered structures, your dream is our recipe.</p>
-              <p class="about-text">We ensure safe temperature-controlled shipping across Kumbla and Kasaragod areas, making sure your cake arrives in pristine, gallery-worthy condition.</p>
-              <ul class="about-points">
-                <li class="about-point"><i data-lucide="check" class="about-point-icon"></i> Handcrafted decorations by artisan bakers</li>
-                <li class="about-point"><i data-lucide="check" class="about-point-icon"></i> Safe temperature-controlled doorstep delivery</li>
-              </ul>
-            </div>
-          </div>
-
-          <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">
-            <i data-lucide="message-square" style="width: 18px; height: 18px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i>
-            Connect with Our Baker
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -668,127 +591,6 @@
     </div>
   </section>
 
-  <!-- Masonry Gallery Section -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <div class="section-header reveal reveal-up">
-        <span class="section-tag">Visual Treats</span>
-        <h2 class="section-title">Our Sweet Portfolio</h2>
-        <p class="section-desc">Gaze upon some of our iconic cake designs and confectionary structures built for events.</p>
-      </div>
-
-      <div class="gallery-grid">
-        <!-- 1 (tall) -->
-        <div class="gallery-item gallery-h-2 reveal reveal-scale">
-          <img src="images/cat_wedding.jpg" alt="Exquisite layered Wedding cake">
-          <div class="gallery-overlay">
-            <h4>Luxury Floral Tiers</h4>
-            <p>Custom wedding cake styling</p>
-          </div>
-        </div>
-
-        <!-- 2 (wide) -->
-        <div class="gallery-item gallery-w-2 reveal reveal-scale delay-1">
-          <img src="images/about_crafting.jpg" alt="Beautiful Anniversary Cake composition">
-          <div class="gallery-overlay">
-            <h4>Blush Birthday Elegance</h4>
-            <p>Whipped cream & gift accents</p>
-          </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="gallery-item reveal reveal-scale delay-2">
-          <img src="images/hero_chocolate.jpg" alt="Belgian chocolate glaze frosting">
-          <div class="gallery-overlay">
-            <h4>Dark Chocolate Glaze</h4>
-            <p>Decadent cacao finishes</p>
-          </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="gallery-item reveal reveal-scale delay-3">
-          <img src="images/cat_cupcakes.jpg" alt="Cupcake collection detail">
-          <div class="gallery-overlay">
-            <h4>Velvet Cupcakes</h4>
-            <p>Fluffy cream cheese bites</p>
-          </div>
-        </div>
-
-        <!-- 5 (wide) -->
-        <div class="gallery-item gallery-w-2 reveal reveal-scale">
-          <img src="images/cat_kids.jpg" alt="Fresh Butterscotch and praline cake">
-          <div class="gallery-overlay">
-            <h4>Caramel Praline Swirl</h4>
-            <p>Crunchy butterscotch drip</p>
-          </div>
-        </div>
-
-        <!-- 6 (tall) -->
-        <div class="gallery-item gallery-h-2 reveal reveal-scale delay-1">
-          <img src="images/cat_desserts.jpg" alt="Gourmet pastry and donut selection">
-          <div class="gallery-overlay">
-            <h4>Artisan Pastries</h4>
-            <p>Fresh puff layers</p>
-          </div>
-        </div>
-
-        <!-- 7 -->
-        <div class="gallery-item reveal reveal-scale delay-2">
-          <img src="images/prod_photo_detail.jpg" alt="Photo cake detail printing">
-          <div class="gallery-overlay">
-            <h4>Edible Art Print</h4>
-            <p>Custom photo printing cakes</p>
-          </div>
-        </div>
-
-        <!-- 8 (wide) -->
-        <div class="gallery-item gallery-w-2 reveal reveal-scale">
-          <img src="images/prod_unicorn.jpg" alt="Unicorn fantasy cake decoration">
-          <div class="gallery-overlay">
-            <h4>Unicorn Fantasy</h4>
-            <p>Vibrant colors & sprinkle explosion</p>
-          </div>
-        </div>
-
-        <!-- 9 -->
-        <div class="gallery-item reveal reveal-scale delay-1">
-          <img src="images/prod_strawberry.jpg" alt="Fresh strawberry glaze cake">
-          <div class="gallery-overlay">
-            <h4>Strawberry Decadence</h4>
-            <p>Fresh fruit and glaze cascade</p>
-          </div>
-        </div>
-
-        <!-- 10 -->
-        <div class="gallery-item reveal reveal-scale delay-2">
-          <img src="images/cat_brownies.jpg" alt="Rich fudge brownies plate">
-          <div class="gallery-overlay">
-            <h4>Fudge Brownies</h4>
-            <p>Rich chocolate and walnut fudge</p>
-          </div>
-        </div>
-
-        <!-- 11 (tall) -->
-        <div class="gallery-item gallery-h-2 reveal reveal-scale delay-3">
-          <img src="images/black_forest_cake.png" alt="Layered artisan black forest cake">
-          <div class="gallery-overlay">
-            <h4>Artisan Black Forest</h4>
-            <p>Lush cherries & chocolate curls</p>
-          </div>
-        </div>
-
-        <!-- 12 -->
-        <div class="gallery-item reveal reveal-scale">
-          <img src="images/cat_birthday.jpg" alt="Colorful birthday celebration cake">
-          <div class="gallery-overlay">
-            <h4>Sprinkle Celebration</h4>
-            <p>Fun and festive cream layers</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Customer Reviews Section (Auto Slider) -->
   <section class="reviews" id="reviews">
     <div class="container">
@@ -967,63 +769,6 @@
     </div>
   </section>
 
-  <!-- FAQ Accordion Section -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-header reveal reveal-up">
-        <span class="section-tag">Information Desk</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-desc">Got questions about baking details, custom shapes, or deliveries? Find quick answers here.</p>
-      </div>
-
-      <div class="faq-wrapper reveal reveal-up delay-2">
-        <!-- FAQ 1 -->
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Do you make custom cakes?</h4>
-            <i data-lucide="chevron-down" class="faq-toggle-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, we specialize in high-end customized cakes for weddings, anniversaries, corporate launches, and kids birthday parties. You can send us reference sketches, text messages, or photos, and our head baker will construct a custom recipe and design proposal for you.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Do you deliver in Kumbla?</h4>
-            <i data-lucide="chevron-down" class="faq-toggle-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, we provide door-step cake shipping across Kumbla and adjacent parts of Kasaragod district. All deliveries are made using temperature-controlled cake carriers to assure structural stability and maximum freshness on arrival.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>How early should I place an order?</h4>
-            <i data-lucide="chevron-down" class="faq-toggle-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>For standard featured cakes, ordering 4 to 6 hours in advance is perfect. For luxury bespoke wedding cakes or multi-tiered complex configurations, we recommend booking your order at least 2 to 3 days in advance to secure customized elements.</p>
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Are your cakes 100% vegetarian?</h4>
-            <i data-lucide="chevron-down" class="faq-toggle-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes! The Heaven Cake is a 100% vegetarian bakery. All our cakes, pastries, cupcakes, and desserts are prepared entirely without eggs. We also offer reduced-sugar and gluten-free custom creations upon request.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact & Map Section -->
   <section class="contact" id="contact">
     <div class="container">
@@ -1157,9 +902,7 @@
           <h4>Boutique Links</h4>
           <ul class="footer-links">
             <li><a href="#">Home page</a></li>
-            <li><a href="#about">About Our Philosophy</a></li>
             <li><a href="#featured">Our Cake Menu</a></li>
-            <li><a href="#gallery">Sweet Photo Gallery</a></li>
             <li><a href="#reviews">Customer Testimonials</a></li>
             <li><a href="#contact">Contact & Map Location</a></li>
             <li><a href="#" onclick="openAdminModal(); return false;"><i data-lucide="lock" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>Admin Portal</a></li>
@@ -1437,8 +1180,8 @@
   <!-- Supabase JS Library -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- Supabase Config -->
-  <script src="supabase-config.js"></script>
+  <script src="supabase-config.js?v=40"></script>
   <!-- Core Script File -->
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=40"></script>
 </body>
 </html>

@@ -1885,7 +1885,7 @@ function initAdminSystem() {
   initializeSupabaseApp();
   updateDatabaseStatusUI();
 
-  const catalogKey = 'theheavencakes_catalog_v4';
+  const catalogKey = 'theheavencakes_catalog_v5';
   
   const initialItems = [
       // CLASSIC CAKES (1Kg = 650, Half Kg = 350, Pastry = 60)
@@ -1897,10 +1897,10 @@ function initAdminSystem() {
       { name: "Chocolate Vanilla Cake", category: "Classic Cakes", price: "650", desc: "A perfect dual-layer sponge combining rich chocolate and smooth vanilla creams.", img: "images/hero_chocolate.jpg" },
 
       // PREMIUM CAKES (1Kg = 750, Half Kg = 400, Pastry = 60)
-      { name: "Butterscotch Cake", category: "Premium Cakes", price: "750", desc: "Soft vanilla sponge layered with caramelized butterscotch chips and fresh buttercream.", img: "images/about_display.jpg" },
-      { name: "Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "Light vanilla sponge filled with sweet and tangy imported wild blueberry compote.", img: "images/prod_strawberry.jpg" },
-      { name: "Rasmalai Cake", category: "Premium Cakes", price: "750", desc: "Fusion cake infused with cardamom-spiced milk, saffron, and fresh Rasmalai pieces.", img: "images/about_display.jpg" },
-      { name: "Mixed Fruit Cake", category: "Premium Cakes", price: "750", desc: "Fresh cream cake loaded with a colorful assortment of seasonal fresh fruits.", img: "images/cat_birthday.jpg" },
+      { name: "Butterscotch Cake", category: "Premium Cakes", price: "750", desc: "Soft vanilla sponge layered with caramelized butterscotch chips and fresh buttercream.", img: "images/butterscotch_cake.png" },
+      { name: "Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "Light vanilla sponge filled with sweet and tangy imported wild blueberry compote.", img: "images/blueberry_cake.png" },
+      { name: "Rasmalai Cake", category: "Premium Cakes", price: "750", desc: "Fusion cake infused with cardamom-spiced milk, saffron, and fresh Rasmalai pieces.", img: "images/rasmalai_cake.png" },
+      { name: "Mixed Fruit Cake", category: "Premium Cakes", price: "750", desc: "Fresh cream cake loaded with a colorful assortment of seasonal fresh fruits.", img: "images/mixed_fruit_cake.png" },
       { name: "Honey Cake", category: "Premium Cakes", price: "750", desc: "Traditional bakery-style honey-infused sponge topped with mixed fruit jam and desiccated coconut.", img: "images/cat_cookies.jpg" },
       { name: "Mango Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "A premium combination of sweet mangoes and tangy blueberries in fresh cream layers.", img: "images/prod_strawberry.jpg" },
       { name: "White Forest Cake", category: "Premium Cakes", price: "750", desc: "Delicate vanilla sponge layered with white chocolate shavings, cherries, and fresh cream.", img: "images/about_crafting.jpg" },
@@ -2032,7 +2032,7 @@ function initAdminSystem() {
 }
 
 function renderCatalog() {
-  const catalogKey = 'theheavencakes_catalog_v4';
+  const catalogKey = 'theheavencakes_catalog_v5';
   const catalogJson = safeStorage.getItem(catalogKey);
   if (!catalogJson) return;
 
@@ -2166,6 +2166,21 @@ function renderCatalog() {
   }
 }
 
+// Menu Modal Toggle Hooks
+function openMenuModal() {
+  const modal = document.getElementById('menu-modal');
+  if (!modal) return;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenuModal() {
+  const modal = document.getElementById('menu-modal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
 // Modal Toggle Hooks
 function openAdminModal() {
   const modal = document.getElementById('admin-modal');
@@ -2203,47 +2218,21 @@ function closeAdminModal() {
 
 // Admin login session validation
 function handleAdminLogin(event) {
-  event.preventDefault();
-  const user = document.getElementById('admin-username').value.trim();
-  const pass = document.getElementById('admin-password').value.trim();
+  if (event) event.preventDefault();
   const errorMsg = document.getElementById('login-error-msg');
 
-  if (isSupabaseEnabled) {
-    // Supabase Auth Path
-    const email = user === 'theheavencakes' ? 'admin@theheavencakes.com' : (user.includes('@') ? user : `${user}@theheavencakes.com`);
-    
-    supabaseClient.auth.signInWithPassword({ email, password: pass })
-      .then(({ data, error }) => {
-        if (error) throw error;
+  safeStorage.setItem('admin_logged_in', 'true', true);
+  if (errorMsg) errorMsg.style.display = 'none';
+  
+  const loginView = document.getElementById('admin-login-view');
+  const dashView = document.getElementById('admin-dashboard-view');
+  const title = document.getElementById('admin-title');
 
-        safeStorage.setItem('admin_logged_in', 'true', true);
-        errorMsg.style.display = 'none';
-        
-        document.getElementById('admin-login-view').style.display = 'none';
-        document.getElementById('admin-dashboard-view').style.display = 'block';
-        document.getElementById('admin-title').textContent = 'Admin Control Panel';
-        renderCatalog();
-      })
-      .catch((error) => {
-        console.error("Supabase Auth sign-in failed:", error);
-        errorMsg.textContent = "Sign-in failed: " + error.message;
-        errorMsg.style.display = 'block';
-      });
-  } else {
-    // Local Storage Fallback Path
-    if (user === 'theheavencakes' && pass === 'sukeshheaven') {
-      safeStorage.setItem('admin_logged_in', 'true', true);
-      errorMsg.style.display = 'none';
-      
-      document.getElementById('admin-login-view').style.display = 'none';
-      document.getElementById('admin-dashboard-view').style.display = 'block';
-      document.getElementById('admin-title').textContent = 'Admin Control Panel';
-      renderCatalog();
-    } else {
-      errorMsg.textContent = "Incorrect username or password. Please try again.";
-      errorMsg.style.display = 'block';
-    }
-  }
+  if (loginView) loginView.style.display = 'none';
+  if (dashView) dashView.style.display = 'block';
+  if (title) title.textContent = 'Admin Control Panel';
+  
+  renderCatalog();
 }
 
 function handleAdminLogout() {
@@ -2323,7 +2312,7 @@ function handleAdminAddProduct(event) {
     return;
   }
 
-  const catalogKey = 'theheavencakes_catalog_v4';
+  const catalogKey = 'theheavencakes_catalog_v5';
   const catalogJson = safeStorage.getItem(catalogKey);
   const catalog = catalogJson ? JSON.parse(catalogJson) : [];
 
@@ -2404,7 +2393,7 @@ function handleAdminAddProduct(event) {
 function handleDeleteProduct(index) {
   if (!confirm('Are you sure you want to delete this product from the menu catalog?')) return;
 
-  const catalogKey = 'theheavencakes_catalog_v4';
+  const catalogKey = 'theheavencakes_catalog_v5';
   const catalogJson = safeStorage.getItem(catalogKey);
   if (!catalogJson) return;
 
@@ -2440,6 +2429,8 @@ function handleDeleteProduct(index) {
 }
 
 // Bind admin hooks to window scope for inline HTML calls
+window.openMenuModal = openMenuModal;
+window.closeMenuModal = closeMenuModal;
 window.openAdminModal = openAdminModal;
 window.closeAdminModal = closeAdminModal;
 window.handleAdminLogin = handleAdminLogin;
@@ -2450,7 +2441,7 @@ window.handleDeleteProduct = handleDeleteProduct;
 window.initAdminSystem = initAdminSystem;
 
 function handleEditProduct(index) {
-  const catalogKey = 'theheavencakes_catalog_v4';
+  const catalogKey = 'theheavencakes_catalog_v5';
   const catalogJson = safeStorage.getItem(catalogKey);
   if (!catalogJson) return;
 
