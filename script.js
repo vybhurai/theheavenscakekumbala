@@ -646,9 +646,9 @@ function updateModalWeightOptions(category, selectedWeight, cakeName) {
 
   if (category === 'Cupcakes') {
     const options = [
-      { value: 'Regular', text: 'Regular (₹25)' },
-      { value: 'Large', text: 'Large (₹50)' },
-      { value: 'Customized', text: 'Customized (₹100)' }
+      { value: 'Regular', text: 'Regular' },
+      { value: 'Large', text: 'Large' },
+      { value: 'Customized', text: 'Customized' }
     ];
     options.forEach(opt => {
       const el = document.createElement('option');
@@ -659,8 +659,8 @@ function updateModalWeightOptions(category, selectedWeight, cakeName) {
   } else if (category === 'Desserts') {
     if (nameLower.includes('tart')) {
       const options = [
-        { value: 'All Fav', text: 'All Fav (₹35)' },
-        { value: 'Large', text: 'Large (₹60)' }
+        { value: 'All Fav', text: 'All Fav' },
+        { value: 'Large', text: 'Large' }
       ];
       options.forEach(opt => {
         const el = document.createElement('option');
@@ -677,8 +677,8 @@ function updateModalWeightOptions(category, selectedWeight, cakeName) {
   } else if (category === 'Custom Cakes') {
     if (nameLower.includes('photo')) {
       const options = [
-        { value: 'Half Kg', text: 'Half Kg (₹650)' },
-        { value: '1 kg', text: '1 kg (₹1050)' }
+        { value: 'Half Kg', text: 'Half Kg' },
+        { value: '1 kg', text: '1 kg' }
       ];
       options.forEach(opt => {
         const el = document.createElement('option');
@@ -689,34 +689,24 @@ function updateModalWeightOptions(category, selectedWeight, cakeName) {
     } else if (nameLower.includes('shape')) {
       const el = document.createElement('option');
       el.value = '1 kg';
-      el.textContent = '1 kg (₹1099)';
+      el.textContent = '1 kg';
       weightSelect.appendChild(el);
     } else {
       const el = document.createElement('option');
       el.value = '1 kg';
-      el.textContent = '1 kg (₹1500)';
+      el.textContent = '1 kg';
       weightSelect.appendChild(el);
     }
   } else {
     // Standard Cakes: Classic, Premium, Exotic, Premium Choco, Premium Exotic, Cheese Cakes
-    let halfPrice = '', onePrice = '', pastryPrice = '';
-    if (category === 'Classic Cakes') { halfPrice = '350'; onePrice = '650'; pastryPrice = '60'; }
-    else if (category === 'Premium Cakes') { halfPrice = '400'; onePrice = '750'; pastryPrice = '60'; }
-    else if (category === 'Exotic Cakes') { halfPrice = '450'; onePrice = '850'; pastryPrice = '80'; }
-    else if (category === 'Premium Choco Cakes') { halfPrice = '500'; onePrice = '1000'; pastryPrice = '100'; }
-    else if (category === 'Premium Exotic') { halfPrice = '550'; onePrice = '1100'; pastryPrice = '100'; }
-    else if (category === 'Cheese Cakes') { halfPrice = '550'; onePrice = '1100'; pastryPrice = '110'; }
-
-    const options = [];
-    if (halfPrice) options.push({ value: 'Half Kg', text: `Half Kg (₹${halfPrice})` });
-    if (onePrice) options.push({ value: '1 kg', text: `1 kg (₹${onePrice})` });
-    
-    // Add standard ordering custom weights
-    options.push({ value: '1.5 kg', text: '1.5 kg' });
-    options.push({ value: '2 kg', text: '2 kg' });
-    options.push({ value: '3 kg', text: '3 kg' });
-    
-    if (pastryPrice) options.push({ value: 'Pastry', text: `Pastry (₹${pastryPrice})` });
+    const options = [
+      { value: 'Half Kg', text: 'Half Kg' },
+      { value: '1 kg', text: '1 kg' },
+      { value: '1.5 kg', text: '1.5 kg' },
+      { value: '2 kg', text: '2 kg' },
+      { value: '3 kg', text: '3 kg' },
+      { value: 'Pastry', text: 'Pastry' }
+    ];
 
     options.forEach(opt => {
       const el = document.createElement('option');
