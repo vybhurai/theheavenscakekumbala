@@ -1210,6 +1210,34 @@ function initHeroScrollAnimation() {
 
 // 16b. BOUTIQUE MOOD SELECTOR (SPECIAL FEATURE)
 function initBoutiqueMoodSelector() {
+  const videoPlayer = document.getElementById('hero-video-player');
+
+  // Setup background video autoplay handling
+  if (videoPlayer) {
+    const handlePlaying = () => {
+      videoPlayer.classList.remove('video-hidden');
+      videoPlayer.classList.add('video-playing');
+    };
+
+    videoPlayer.addEventListener('playing', handlePlaying);
+    
+    if (!videoPlayer.paused) {
+      handlePlaying();
+    } else {
+      videoPlayer.play().then(() => {
+        handlePlaying();
+      }).catch(err => {
+        console.warn("Hero video autoplay attempt:", err);
+      });
+    }
+
+    setTimeout(() => {
+      if (videoPlayer.paused) {
+        videoPlayer.play().then(handlePlaying).catch(() => {});
+      }
+    }, 1000);
+  }
+
   const moodSelector = document.querySelector('.hero-mood-selector');
   if (!moodSelector) return;
 
@@ -1217,11 +1245,6 @@ function initBoutiqueMoodSelector() {
   const titleElem = document.getElementById('hero-title');
   const descElem = document.getElementById('hero-desc');
   const imgMain = document.getElementById('hero-img-main');
-  const videoPlayer = document.getElementById('hero-video-player');
-  const compElem = document.getElementById('tasting-composition');
-  const profileElem = document.getElementById('tasting-profile');
-  const specsElem = document.getElementById('tasting-specs');
-
   if (!titleElem || !descElem || !imgMain) return;
 
   const HERO_MOODS = {
