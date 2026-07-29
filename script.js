@@ -1938,7 +1938,7 @@ function initAdminSystem() {
       { name: "Chocolate Overload Cake", category: "Premium Choco Cakes", price: "1000", desc: "Ultimate chocolate experience with layers of ganache, chips, and chocolate shavings.", img: "images/hero_chocolate.jpg" },
       { name: "Chocolate Globe Cake", category: "Premium Choco Cakes", price: "1000", desc: "Spectacular round chocolate cake covered in a spherical glaze of premium chocolate.", img: "images/hero_chocolate.jpg" },
       { name: "Chocolate Fantasy Cake", category: "Premium Choco Cakes", price: "1000", desc: "Moist chocolate fudge sponge layered with rich dark chocolate fantasy cream.", img: "images/hero_chocolate.jpg" },
-      { name: "Choco Truffle Cake", category: "Premium Choco Cakes", price: "1000", desc: "Rich chocolate sponge layered with dense chocolate ganache and chocolate chips.", img: "cakeimages/Chocolate Truffle.png" },
+      { name: "Choco Truffle Cake", category: "Premium Choco Cakes", price: "1000", desc: "Rich chocolate sponge layered with dense chocolate ganache and chocolate chips.", img: "cakeimages/Chocolate Truffle (2).png" },
       { name: "Chocolate Excess Cake", category: "Premium Choco Cakes", price: "1000", desc: "A luxurious overdose of dark chocolate fudge and premium cocoa layers.", img: "images/hero_chocolate.jpg" },
       { name: "Belgian Chocolate Cake", category: "Premium Choco Cakes", price: "1000", desc: "Rich, moist dark chocolate sponge layers smothered in luxury Belgian chocolate ganache.", img: "images/hero_chocolate.jpg" },
       { name: "Dark Choco Chip Cake", category: "Premium Choco Cakes", price: "1000", desc: "Dark chocolate cake filled with crunchy bittersweet chocolate chips and fudge.", img: "images/hero_chocolate.jpg" },
