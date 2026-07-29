@@ -2006,39 +2006,22 @@ function initAdminSystem() {
     ];
 
     globalInitialItems = initialItems;
-
-    if (isSupabaseEnabled) {
-      // Initial fetch
-      refreshCatalogFromSupabase(catalogKey);
-
-      // Subscribe to real-time changes
-      supabaseClient
-        .channel('public:catalog')
-        .on('postgres_changes', { event: '*', schema: 'public', table: 'catalog' }, () => {
-          refreshCatalogFromSupabase(catalogKey);
-        })
-        .subscribe();
-    } else {
-      let catalogVal = safeStorage.getItem(catalogKey);
-      if (!catalogVal) {
-        try {
-          safeStorage.setItem(catalogKey, JSON.stringify(initialItems));
-        } catch (err) {
-          console.error("Error seeding catalog:", err);
-        }
-      }
-      renderCatalog();
-    }
+    safeStorage.setItem(catalogKey, JSON.stringify(initialItems));
+    renderCatalog();
 }
 
 function renderCatalog() {
   const catalogKey = 'theheavencakes_catalog_v5';
-  const catalogJson = safeStorage.getItem(catalogKey);
-  if (!catalogJson) return;
+  let catalog = globalInitialItems;
+  try {
+    const catalogJson = safeStorage.getItem(catalogKey);
+    if (catalogJson) catalog = JSON.parse(catalogJson);
+  } catch (e) {
+    catalog = globalInitialItems;
+  }
+  if (!catalog || catalog.length === 0) catalog = globalInitialItems;
 
   try {
-    const catalog = JSON.parse(catalogJson);
-
     // Populate public storefront products grid
     const productsGrid = document.getElementById('products-grid');
     if (productsGrid) {

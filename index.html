@@ -50,7 +50,6 @@
           <li><a href="#reviews" class="nav-link">Reviews</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <!-- Mobile CTA inclusion -->
-          <li class="mobile-only" style="margin-top: 10px;"><a href="#" onclick="openAdminModal(); return false;" class="nav-link" style="color: var(--gold);"><i data-lucide="lock" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i>Admin Portal</a></li>
           <li class="mobile-only"><a href="#featured" class="btn btn-primary nav-btn-order" style="margin-top: 20px; display: inline-flex;">Order Online</a></li>
         </ul>
       </nav>
@@ -59,9 +58,6 @@
         <a href="https://www.google.com/maps/search/?api=1&query=HWVV%2BRH%20Kumbla,%20Kerala" target="_blank" rel="noopener" class="nav-action-btn" aria-label="Store Location" title="Store Location (Google Maps)" style="color: var(--gold); border-color: var(--gold); background: rgba(212, 175, 55, 0.15); box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);">
           <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
         </a>
-        <button onclick="openAdminModal(); return false;" class="nav-action-btn" aria-label="Open Admin Portal" title="Admin Portal">
-          <i data-lucide="lock" style="width: 16px; height: 16px;"></i>
-        </button>
         <a href="tel:+919644553363" class="nav-action-btn" aria-label="Call The Heaven Cake" title="Call Us">
           <i data-lucide="phone" style="width: 16px; height: 16px;"></i>
         </a>
@@ -1057,131 +1053,12 @@
   <!-- Live Activity Toast Notification System -->
   <div id="live-activity-toast" class="toast-container"></div>
 
-  <!-- Admin Portal Modal -->
-  <div id="admin-modal" class="admin-modal">
-    <div class="admin-modal-content">
-      <div class="admin-modal-header">
-        <h3 id="admin-title">Admin Login</h3>
-        <button type="button" class="admin-modal-close" onclick="closeAdminModal()">
-          <i data-lucide="x" style="width: 20px; height: 20px;"></i>
-        </button>
-      </div>
-
-      <!-- Login View -->
-      <div id="admin-login-view" class="admin-view">
-        <form id="admin-login-form" onsubmit="handleAdminLogin(event)">
-          <div class="form-group">
-            <label for="admin-username">Username</label>
-            <input type="text" id="admin-username" required placeholder="Enter username">
-          </div>
-          <div class="form-group">
-            <label for="admin-password">Password</label>
-            <input type="password" id="admin-password" required placeholder="Enter password">
-          </div>
-          <div id="login-error-msg" class="error-message" style="display: none; color: #ff3333; margin-bottom: 15px; font-size: 0.85rem;">
-            Incorrect username or password. Please try again.
-          </div>
-          <button type="submit" class="btn btn-primary form-btn-submit">Sign In</button>
-        </form>
-      </div>
-
-      <!-- Dashboard View (Hidden by default) -->
-      <div id="admin-dashboard-view" class="admin-view" style="display: none;">
-        <div class="admin-dashboard-layout">
-          <!-- Left Column: Add Product -->
-          <div class="admin-form-side">
-            <h4 id="admin-form-title">Add New Product</h4>
-            <form id="admin-add-product-form" onsubmit="handleAdminAddProduct(event)">
-              <div class="form-group">
-                <label for="admin-prod-name">Product Name *</label>
-                <input type="text" id="admin-prod-name" required placeholder="E.g., Vancho Exotic Cake">
-              </div>
-              <div class="form-group">
-                <label for="admin-prod-category">Category *</label>
-                <select id="admin-prod-category" required>
-                  <option value="Classic Cakes">Classic Cakes</option>
-                  <option value="Premium Cakes">Premium Cakes</option>
-                  <option value="Exotic Cakes">Exotic Cakes</option>
-                  <option value="Premium Choco Cakes">Premium Choco Cakes</option>
-                  <option value="Premium Exotic">Premium Exotic</option>
-                  <option value="Cheese Cakes">Cheese Cakes</option>
-                  <option value="Cupcakes">Cupcakes</option>
-                  <option value="Desserts">Desserts</option>
-                  <option value="Custom Cakes">Custom Cakes</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="admin-prod-price">Starting Price (₹) *</label>
-                <input type="text" id="admin-prod-price" required placeholder="E.g., 850">
-              </div>
-              <div class="form-group">
-                <label for="admin-prod-desc">Description *</label>
-                <input type="text" id="admin-prod-desc" required placeholder="E.g., Soft vanilla and chocolate sponge layers...">
-              </div>
-              <div class="form-group">
-                <label>Product Image *</label>
-                <div class="upload-dropzone" id="upload-dropzone">
-                  <input type="file" id="admin-prod-image" accept="image/*" required style="display: none;" onchange="handleImageFileSelect(event)">
-                  <div class="upload-inner" onclick="document.getElementById('admin-prod-image').click()">
-                    <i data-lucide="image" class="upload-icon"></i>
-                    <p id="upload-filename">Click to upload image file</p>
-                    <span class="upload-hint">Image will be compressed automatically</span>
-                  </div>
-                </div>
-                <div id="image-preview-container" style="display: none; margin-top: 15px; text-align: center;">
-                  <img id="admin-image-preview" src="" alt="Preview" style="max-height: 120px; border-radius: 8px; border: 1px solid var(--gold);">
-                </div>
-              </div>
-              <div class="admin-form-actions" style="display: flex; gap: 10px; margin-top: 15px;">
-                <button type="submit" id="admin-submit-btn" class="btn btn-primary form-btn-submit" style="flex: 1;">Add Product to Menu</button>
-                <button type="button" id="admin-cancel-edit-btn" class="btn btn-secondary" style="flex: 1; display: none; background-color: #f1ede4; border-color: #e5dec9; color: var(--text-main);" onclick="cancelProductEdit()">Cancel Edit</button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Right Column: Catalog Management -->
-          <div class="admin-list-side">
-            <div class="list-side-header" style="align-items: flex-start;">
-              <div style="display: flex; flex-direction: column; gap: 4px;">
-                <h4 style="margin: 0; font-size: 1.1rem; font-family: 'Playfair Display', serif; color: var(--gold);">Active Catalog Manager</h4>
-                <div id="db-status-badge" style="font-size: 0.75rem; color: #ffb74d; display: flex; align-items: center; gap: 6px; font-weight: 500;">
-                  <span id="db-status-dot" style="width: 8px; height: 8px; border-radius: 50%; background-color: #ffb74d; display: inline-block; box-shadow: 0 0 8px #ffb74d;"></span>
-                  <span id="db-status-text">Database: Local Storage Mode</span>
-                </div>
-              </div>
-              <button type="button" class="btn btn-secondary" onclick="handleAdminLogout()" style="padding: 6px 12px; font-size: 0.8rem; height: auto;">Logout</button>
-            </div>
-            <div class="admin-catalog-table-wrapper">
-              <table class="admin-catalog-table">
-                <thead>
-                  <tr>
-                    <th>Image</th>
-                    <th>Product Details</th>
-                    <th>Price</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="admin-catalog-tbody">
-                  <!-- Will be populated dynamically in JS -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- GSAP Core and ScrollTrigger CDNs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <!-- Lucide Icons Script -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Supabase JS Library -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <!-- Supabase Config -->
-  <script src="supabase-config.js?v=40"></script>
   <!-- Core Script File -->
-  <script src="script.js?v=40"></script>
+  <script src="script.js?v=60"></script>
 </body>
 </html>
