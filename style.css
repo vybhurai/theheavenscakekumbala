@@ -4820,3 +4820,26 @@ html, body {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+/* HIDE ALL PRICE & RATE AMOUNTS ACROSS THE WEBSITE */
+.product-price, 
+.modal-cake-price, 
+.catalog-price, 
+.price-value, 
+.price-label, 
+.customizer-price-row,
+.customizer-total-box,
+#summary-base-price, 
+#summary-tier-price, 
+#summary-toppings-price, 
+#customizer-total-price {
+  display: none !important;
+}
+
+.product-footer {
+  justify-content: center !important;
+}
+
+.product-footer .btn {
+  width: 100% !important;
+}

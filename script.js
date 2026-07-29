@@ -2102,11 +2102,7 @@ function renderCatalog() {
             <p class="product-desc">${item.desc || 'Fresh cream cake.'}</p>
             ${sizeSelectorHtml}
             <div class="product-footer">
-              <div class="product-price">
-                <span class="price-label">${priceLabel}</span>
-                <span class="price-value">₹${initialPrice}</span>
-              </div>
-              <button type="button" class="btn btn-primary product-btn-order" onclick="openOrderModal('${(item.name || 'Signature Cake').replace(/'/g, "\\'")}', '₹${initialPrice}', '${item.img || 'images/hero_chocolate.jpg'}', '${initialLabel}', '${item.category || 'Classic Cakes'}')">Order Now</button>
+              <button type="button" class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('${(item.name || 'Signature Cake').replace(/'/g, "\\'")}', '', '${item.img || 'images/hero_chocolate.jpg'}', '${initialLabel}', '${item.category || 'Classic Cakes'}')">Order Now</button>
             </div>
           </div>
         `;
