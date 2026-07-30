@@ -1843,20 +1843,19 @@ async function refreshCatalogFromSupabase(catalogKey) {
     if (error) throw error;
 
     if (data && data.length > 0) {
-      // Map old placeholder paths to the new premium generated assets for default items
+      // Map placeholder paths to the uploaded real cake images
       const mappedData = data.map(item => {
-        if (item.name === "Vanilla Cake" && (item.img === "images/about_display.jpg" || !item.img)) {
-          return { ...item, img: "images/vanilla_cake.png" };
-        }
-        if (item.name === "Black Forest Cake" && (item.img === "images/about_crafting.jpg" || !item.img)) {
-          return { ...item, img: "images/black_forest_cake.png" };
-        }
-        if (item.name === "Pineapple Cake" && (item.img === "images/cat_kids.jpg" || !item.img)) {
-          return { ...item, img: "images/pineapple_cake.png" };
-        }
-        if (item.name === "Mango Cake" && (item.img === "images/prod_strawberry.jpg" || !item.img)) {
-          return { ...item, img: "images/mango_cake.png" };
-        }
+        if (item.name === "Vanilla Cake") return { ...item, img: "cakeimages/vanilla.jpeg" };
+        if (item.name === "Black Forest Cake") return { ...item, img: "cakeimages/Black Forest.png" };
+        if (item.name === "Rasmalai Cake") return { ...item, img: "cakeimages/Rasmalai (2).png" };
+        if (item.name === "Honey Cake") return { ...item, img: "cakeimages/Honey Cake.png" };
+        if (item.name === "Swiss Chocolate Cake") return { ...item, img: "cakeimages/Swiss Chocolate (2).png" };
+        if (item.name === "Vancho Cake") return { ...item, img: "cakeimages/Vancho.png" };
+        if (item.name === "Chocolate Fantasy Cake") return { ...item, img: "cakeimages/Chocolate Fantasy.png" };
+        if (item.name === "Choco Truffle Cake") return { ...item, img: "cakeimages/Chocolate Truffle (2).png" };
+        if (item.name === "Chocolate Excess Cake") return { ...item, img: "cakeimages/Chocolate Excess.png" };
+        if (item.name === "Red Velvet Cake") return { ...item, img: "cakeimages/Red Velvet.png" };
+        if (item.name === "Roasted Almond Cake") return { ...item, img: "cakeimages/Roasted Almond.png" };
         return item;
       });
       safeStorage.setItem(catalogKey, JSON.stringify(mappedData));
@@ -1898,7 +1897,7 @@ function initAdminSystem() {
   initializeSupabaseApp();
   updateDatabaseStatusUI();
 
-  const catalogKey = 'theheavencakes_catalog_v5';
+  const catalogKey = 'theheavencakes_catalog_v6';
   
   const initialItems = [
       // CLASSIC CAKES (1Kg = 650, Half Kg = 350, Pastry = 60)
@@ -1912,7 +1911,7 @@ function initAdminSystem() {
       // PREMIUM CAKES (1Kg = 750, Half Kg = 400, Pastry = 60)
       { name: "Butterscotch Cake", category: "Premium Cakes", price: "750", desc: "Soft vanilla sponge layered with caramelized butterscotch chips and fresh buttercream.", img: "images/butterscotch_cake.png" },
       { name: "Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "Light vanilla sponge filled with sweet and tangy imported wild blueberry compote.", img: "images/blueberry_cake.png" },
-      { name: "Rasmalai Cake", category: "Premium Cakes", price: "750", desc: "Fusion cake infused with cardamom-spiced milk, saffron, and fresh Rasmalai pieces.", img: "cakeimages/Rasmalai.png" },
+      { name: "Rasmalai Cake", category: "Premium Cakes", price: "750", desc: "Fusion cake infused with cardamom-spiced milk, saffron, and fresh Rasmalai pieces.", img: "cakeimages/Rasmalai (2).png" },
       { name: "Mixed Fruit Cake", category: "Premium Cakes", price: "750", desc: "Fresh cream cake loaded with a colorful assortment of seasonal fresh fruits.", img: "images/mixed_fruit_cake.png" },
       { name: "Honey Cake", category: "Premium Cakes", price: "750", desc: "Traditional bakery-style honey-infused sponge topped with mixed fruit jam and desiccated coconut.", img: "cakeimages/Honey Cake.png" },
       { name: "Mango Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "A premium combination of sweet mangoes and tangy blueberries in fresh cream layers.", img: "images/prod_strawberry.jpg" },
@@ -1925,8 +1924,8 @@ function initAdminSystem() {
       { name: "Cherry Mousse Cake", category: "Exotic Cakes", price: "850", desc: "Light and airy cherry mousse layered between moist vanilla sponge cakes.", img: "images/prod_strawberry.jpg" },
       { name: "Tiramisu Cake", category: "Exotic Cakes", price: "850", desc: "Italian-style espresso-soaked sponge layered with creamy mascarpone cheese and cocoa.", img: "images/cat_photo.jpg" },
       { name: "Chocolate Mousse Cake", category: "Exotic Cakes", price: "850", desc: "Fluffy and rich chocolate mousse layered over a dark chocolate sponge base.", img: "images/hero_chocolate.jpg" },
-      { name: "Swiss Chocolate Cake", category: "Exotic Cakes", price: "850", desc: "Smooth and creamy milk chocolate frosting enveloping a dark chocolate sponge.", img: "cakeimages/Swiss Chocolate.png" },
-      { name: "Vancho Cake", category: "Exotic Cakes", price: "850", desc: "A perfect blend of vanilla and chocolate sponge layered with white and dark chocolate ganache.", img: "images/cat_kids.jpg" },
+      { name: "Swiss Chocolate Cake", category: "Exotic Cakes", price: "850", desc: "Smooth and creamy milk chocolate frosting enveloping a dark chocolate sponge.", img: "cakeimages/Swiss Chocolate (2).png" },
+      { name: "Vancho Cake", category: "Exotic Cakes", price: "850", desc: "A perfect blend of vanilla and chocolate sponge layered with white and dark chocolate ganache.", img: "cakeimages/Vancho.png" },
       { name: "Oreo Cake", category: "Exotic Cakes", price: "850", desc: "Vanilla and chocolate sponge loaded with crushed Oreo cookies and fresh whipped cream.", img: "images/cat_cookies.jpg" },
       { name: "Chocolate Zebra Cake", category: "Exotic Cakes", price: "850", desc: "Striking zebra-striped chocolate and vanilla marbled sponge with light frosting.", img: "images/hero_chocolate.jpg" },
       { name: "German Blue Forest Cake", category: "Exotic Cakes", price: "850", desc: "Chocolate sponge layered with fresh cream, sweet cherries, and blue-tinted chocolate accents.", img: "images/about_crafting.jpg" },
@@ -1937,17 +1936,17 @@ function initAdminSystem() {
       // PREMIUM CHOCO CAKES (1Kg = 1000, Half Kg = 500, Pastry = 100)
       { name: "Chocolate Overload Cake", category: "Premium Choco Cakes", price: "1000", desc: "Ultimate chocolate experience with layers of ganache, chips, and chocolate shavings.", img: "images/hero_chocolate.jpg" },
       { name: "Chocolate Globe Cake", category: "Premium Choco Cakes", price: "1000", desc: "Spectacular round chocolate cake covered in a spherical glaze of premium chocolate.", img: "images/hero_chocolate.jpg" },
-      { name: "Chocolate Fantasy Cake", category: "Premium Choco Cakes", price: "1000", desc: "Moist chocolate fudge sponge layered with rich dark chocolate fantasy cream.", img: "images/hero_chocolate.jpg" },
+      { name: "Chocolate Fantasy Cake", category: "Premium Choco Cakes", price: "1000", desc: "Moist chocolate fudge sponge layered with rich dark chocolate fantasy cream.", img: "cakeimages/Chocolate Fantasy.png" },
       { name: "Choco Truffle Cake", category: "Premium Choco Cakes", price: "1000", desc: "Rich chocolate sponge layered with dense chocolate ganache and chocolate chips.", img: "cakeimages/Chocolate Truffle (2).png" },
-      { name: "Chocolate Excess Cake", category: "Premium Choco Cakes", price: "1000", desc: "A luxurious overdose of dark chocolate fudge and premium cocoa layers.", img: "images/hero_chocolate.jpg" },
+      { name: "Chocolate Excess Cake", category: "Premium Choco Cakes", price: "1000", desc: "A luxurious overdose of dark chocolate fudge and premium cocoa layers.", img: "cakeimages/Chocolate Excess.png" },
       { name: "Belgian Chocolate Cake", category: "Premium Choco Cakes", price: "1000", desc: "Rich, moist dark chocolate sponge layers smothered in luxury Belgian chocolate ganache.", img: "images/hero_chocolate.jpg" },
       { name: "Dark Choco Chip Cake", category: "Premium Choco Cakes", price: "1000", desc: "Dark chocolate cake filled with crunchy bittersweet chocolate chips and fudge.", img: "images/hero_chocolate.jpg" },
       { name: "Dutch Truffle Cake", category: "Premium Choco Cakes", price: "1000", desc: "Creamy Dutch-style dark chocolate truffle icing over layers of moist cocoa sponge.", img: "images/hero_chocolate.jpg" },
 
       // PREMIUM EXOTIC (1Kg = 1100, Half Kg = 550, Pastry = 100)
-      { name: "Red Velvet Cake", category: "Premium Exotic", price: "1100", desc: "Indulgent layers of classic red velvet sponge, infused with authentic cream cheese frosting.", img: "images/prod_red_velvet.jpg" },
-      { name: "Roasted Almond Cake", category: "Premium Exotic", price: "1100", desc: "Fragrant vanilla sponge layered with caramelized almond pieces and almond cream.", img: "images/about_display.jpg" },
-      { name: "Red Velvet Chocolate Cake", category: "Premium Exotic", price: "1100", desc: "Fusion sponge combining red velvet and dark chocolate layers with cream cheese frosting.", img: "images/prod_red_velvet.jpg" },
+      { name: "Red Velvet Cake", category: "Premium Exotic", price: "1100", desc: "Indulgent layers of classic red velvet sponge, infused with authentic cream cheese frosting.", img: "cakeimages/Red Velvet.png" },
+      { name: "Roasted Almond Cake", category: "Premium Exotic", price: "1100", desc: "Fragrant vanilla sponge layered with caramelized almond pieces and almond cream.", img: "cakeimages/Roasted Almond.png" },
+      { name: "Red Velvet Chocolate Cake", category: "Premium Exotic", price: "1100", desc: "Fusion sponge combining red velvet and dark chocolate layers with cream cheese frosting.", img: "cakeimages/Red Velvet.png" },
       { name: "Chocolate Crunch Cake", category: "Premium Exotic", price: "1100", desc: "Crunchy praline and cornflake chocolate layers paired with rich milk chocolate ganache.", img: "images/hero_chocolate.jpg" },
       { name: "Nutty Bubble Cake", category: "Premium Exotic", price: "1100", desc: "A playful bubble-shaped cake layered with white chocolate cream and mixed roasted nuts.", img: "images/cat_cookies.jpg" },
       { name: "Heaven Spacial Cake", category: "Premium Exotic", price: "1100", desc: "The Heaven's signature chef-special cake featuring secret exotic fruits and creams.", img: "images/about_display.jpg" },
@@ -2024,7 +2023,7 @@ function initAdminSystem() {
 }
 
 function renderCatalog() {
-  const catalogKey = 'theheavencakes_catalog_v5';
+  const catalogKey = 'theheavencakes_catalog_v6';
   let catalog = globalInitialItems;
   try {
     const catalogJson = safeStorage.getItem(catalogKey);
