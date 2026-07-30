@@ -1904,7 +1904,7 @@ function initAdminSystem() {
   initializeSupabaseApp();
   updateDatabaseStatusUI();
 
-  const catalogKey = 'theheavencakes_catalog_v10';
+  const catalogKey = 'theheavencakes_catalog_v11';
   
   const initialItems = [
       // CLASSIC CAKES (1Kg = 650, Half Kg = 350, Pastry = 60)
@@ -1912,23 +1912,23 @@ function initAdminSystem() {
       { name: "Black Forest Cake", category: "Classic Cakes", price: "650", desc: "Traditional German chocolate sponge layered with whipped cream, cherries, and dark chocolate flakes.", img: "cakeimages/Black Forest.png" },
       { name: "Pineapple Cake", category: "Classic Cakes", price: "650", desc: "Tropical fresh cream cake with juicy pineapple chunks and light vanilla sponge.", img: "cakeimages/vanilla.jpeg" },
       { name: "Mango Cake", category: "Classic Cakes", price: "650", desc: "Delectable fresh cream cake filled with sweet mango pulp and layered with premium cream.", img: "cakeimages/Honey Cake.png" },
-      { name: "Strawberry Cake", category: "Classic Cakes", price: "650", desc: "Fluffy vanilla sponge filled with sweet and fruity strawberry compote.", img: "cakeimages/Blueberry.png" },
+      { name: "Strawberry Cake", category: "Classic Cakes", price: "650", desc: "Fluffy vanilla sponge filled with sweet and fruity strawberry compote.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Chocolate Vanilla Cake", category: "Classic Cakes", price: "650", desc: "A perfect dual-layer sponge combining rich chocolate and smooth vanilla creams.", img: "cakeimages/Chocolate Vanila.png" },
 
       // PREMIUM CAKES (1Kg = 750, Half Kg = 400, Pastry = 60)
       { name: "Butterscotch Cake", category: "Premium Cakes", price: "750", desc: "Soft vanilla sponge layered with caramelized butterscotch chips and fresh buttercream.", img: "cakeimages/Roasted Almond.png" },
-      { name: "Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "Light vanilla sponge filled with sweet and tangy imported wild blueberry compote.", img: "cakeimages/Blueberry.png" },
+      { name: "Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "Light vanilla sponge filled with sweet and tangy imported wild blueberry compote.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Rasmalai Cake", category: "Premium Cakes", price: "750", desc: "Fusion cake infused with cardamom-spiced milk, saffron, and fresh Rasmalai pieces.", img: "cakeimages/Rasmalai (2).png" },
       { name: "Mixed Fruit Cake", category: "Premium Cakes", price: "750", desc: "Fresh cream cake loaded with a colorful assortment of seasonal fresh fruits.", img: "cakeimages/Honey Cake.png" },
       { name: "Honey Cake", category: "Premium Cakes", price: "750", desc: "Traditional bakery-style honey-infused sponge topped with mixed fruit jam and desiccated coconut.", img: "cakeimages/Honey Cake.png" },
-      { name: "Mango Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "A premium combination of sweet mangoes and tangy blueberries in fresh cream layers.", img: "cakeimages/Blueberry.png" },
+      { name: "Mango Blue Berry Cake", category: "Premium Cakes", price: "750", desc: "A premium combination of sweet mangoes and tangy blueberries in fresh cream layers.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "White Forest Cake", category: "Premium Cakes", price: "750", desc: "Delicate vanilla sponge layered with white chocolate shavings, cherries, and fresh cream.", img: "cakeimages/vanilla.jpeg" },
       { name: "Caramel White Choco Chip Cake", category: "Premium Cakes", price: "750", desc: "Creamy white chocolate sponge infused with rich caramel drizzle and crunchy chips.", img: "cakeimages/Roasted Almond.png" },
       { name: "Cassata Cake", category: "Premium Cakes", price: "750", desc: "Colorful layered cake inspired by Italian Cassata flavors and loaded with nuts and candied peel.", img: "cakeimages/Rasmalai (2).png" },
-      { name: "Black Current Cake", category: "Premium Cakes", price: "750", desc: "Spongy vanilla cake filled with rich black currant syrup and juicy berries.", img: "cakeimages/Blueberry.png" },
+      { name: "Black Current Cake", category: "Premium Cakes", price: "750", desc: "Spongy vanilla cake filled with rich black currant syrup and juicy berries.", img: "cakeimages/Blueberry.png?v=2" },
 
       // EXOTIC CAKES (1Kg = 850, Half Kg = 450, Pastry = 80)
-      { name: "Cherry Mousse Cake", category: "Exotic Cakes", price: "850", desc: "Light and airy cherry mousse layered between moist vanilla sponge cakes.", img: "cakeimages/Blueberry.png" },
+      { name: "Cherry Mousse Cake", category: "Exotic Cakes", price: "850", desc: "Light and airy cherry mousse layered between moist vanilla sponge cakes.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Tiramisu Cake", category: "Exotic Cakes", price: "850", desc: "Italian-style espresso-soaked sponge layered with creamy mascarpone cheese and cocoa.", img: "cakeimages/Cheese cake.png" },
       { name: "Chocolate Mousse Cake", category: "Exotic Cakes", price: "850", desc: "Fluffy and rich chocolate mousse layered over a dark chocolate sponge base.", img: "cakeimages/Chocolate Fantasy.png" },
       { name: "Swiss Chocolate Cake", category: "Exotic Cakes", price: "850", desc: "Smooth and creamy milk chocolate frosting enveloping a dark chocolate sponge.", img: "cakeimages/Swiss Chocolate (2).png" },
@@ -1970,7 +1970,7 @@ function initAdminSystem() {
 
       // CHEESE CAKE (1Kg = 1100, Half Kg = 550, Pastry = 110)
       { name: "Original Newyork Cheesecake", category: "Cheese Cakes", price: "1100", desc: "Rich and dense classic baked New York style cheesecake with a graham cracker crust.", img: "cakeimages/Cheese cake.png" },
-      { name: "Blue Berry Cheesecake", category: "Cheese Cakes", price: "1100", desc: "Smooth cream cheesecake topped with sweet and tangy imported wild blueberry glaze.", img: "cakeimages/Cheese cake.png" },
+      { name: "Blue Berry Cheesecake", category: "Cheese Cakes", price: "1100", desc: "Smooth cream cheesecake topped with sweet and tangy imported wild blueberry glaze.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Mango Cheesecake", category: "Cheese Cakes", price: "1100", desc: "Silky baked cheesecake topped with fresh tropical mango puree glaze.", img: "cakeimages/Cheese cake.png" },
       { name: "Strawberry Cheesecake", category: "Cheese Cakes", price: "1100", desc: "Creamy classic cheesecake topped with a sweet strawberry glaze and berry chunks.", img: "cakeimages/Cheese cake.png" },
       { name: "Pineapple Cheesecake", category: "Cheese Cakes", price: "1100", desc: "Baked cream cheesecake layered with caramelized pineapple compote.", img: "cakeimages/Cheese cake.png" },
@@ -1979,7 +1979,7 @@ function initAdminSystem() {
       // DESSERTS (Cupcakes, Muffins, Donuts, Brownies, Glass Desserts, Lava, Tarts, Bar Cakes)
       // CUPCAKES (Regular = 25, Large = 50, Customized = 100)
       { name: "Red Velvet Cup Cake", category: "Cupcakes", price: "25", desc: "Freshly baked premium Red Velvet cupcake topped with silky cream cheese frosting.", img: "images/cat_cupcakes.jpg" },
-      { name: "Blue Berry Cup Cake", category: "Cupcakes", price: "25", desc: "Fluffy cupcake loaded with wild blueberries and topped with blueberry buttercream.", img: "images/cat_cupcakes.jpg" },
+      { name: "Blue Berry Cup Cake", category: "Cupcakes", price: "25", desc: "Fluffy cupcake loaded with wild blueberries and topped with blueberry buttercream.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Vanilla Cup Cake", category: "Cupcakes", price: "25", desc: "Sweet vanilla sponge cupcake with a swirl of classic Madagascar vanilla cream.", img: "images/cat_cupcakes.jpg" },
       { name: "Strawberry Cup Cake", category: "Cupcakes", price: "25", desc: "Soft strawberry-infused cupcake topped with fresh strawberry cream.", img: "images/cat_cupcakes.jpg" },
       { name: "Truffle Cup Cake", category: "Cupcakes", price: "25", desc: "Dense chocolate cupcake filled and frosted with rich dark chocolate ganache truffle.", img: "images/cat_cupcakes.jpg" },
@@ -1987,7 +1987,7 @@ function initAdminSystem() {
       
       // MUFFINS (Rs. 45)
       { name: "Chunky Chocolate Muffin", category: "Desserts", price: "45", desc: "Baked chocolate muffin loaded with huge chunks of semisweet chocolate.", img: "images/cat_desserts.jpg" },
-      { name: "Blue Berry Muffin", category: "Desserts", price: "45", desc: "Moist bakery muffin filled with fresh bursting blueberries and coarse sugar.", img: "images/cat_desserts.jpg" },
+      { name: "Blue Berry Muffin", category: "Desserts", price: "45", desc: "Moist bakery muffin filled with fresh bursting blueberries and coarse sugar.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Vanilla Chocolate Muffin", category: "Desserts", price: "45", desc: "Marbled muffin combining classic vanilla sponge with rich chocolate swirls.", img: "images/cat_desserts.jpg" },
       
       // DONUTS (Rs. 50)
@@ -2003,7 +2003,7 @@ function initAdminSystem() {
       // GLASS DESSERTS (Rs. 65)
       { name: "Pineapple Pudding Glass", category: "Desserts", price: "65", desc: "Layers of vanilla custard, sponge, and sweet pineapple compote in a dessert glass.", img: "images/cat_desserts.jpg" },
       { name: "Strawberry Pudding Glass", category: "Desserts", price: "65", desc: "Creamy strawberry custard layered with sponge and strawberry jelly.", img: "images/cat_desserts.jpg" },
-      { name: "Blueberry Pudding Glass", category: "Desserts", price: "65", desc: "Velvety pudding glass layered with wild blueberry sauce and whipped cream.", img: "images/cat_desserts.jpg" },
+      { name: "Blueberry Pudding Glass", category: "Desserts", price: "65", desc: "Velvety pudding glass layered with wild blueberry sauce and whipped cream.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Mango Pudding Glass", category: "Desserts", price: "65", desc: "Seasonal mango custard layered with fresh mango pulp in a dessert glass.", img: "images/cat_desserts.jpg" },
 
       // LAVA CAKE (Rs. 60)
@@ -2011,7 +2011,7 @@ function initAdminSystem() {
 
       // BAR CAKE (Rs. 100)
       { name: "Chunky Bar Cake", category: "Desserts", price: "100", desc: "Moist rectangular sliced bar cake packed with chocolate chunks.", img: "images/cat_desserts.jpg" },
-      { name: "Blue Berry Bar Cake", category: "Desserts", price: "100", desc: "Moist butter bar cake marbled with wild blueberry fruit fillings.", img: "images/cat_desserts.jpg" },
+      { name: "Blue Berry Bar Cake", category: "Desserts", price: "100", desc: "Moist butter bar cake marbled with wild blueberry fruit fillings.", img: "cakeimages/Blueberry.png?v=2" },
       { name: "Butterscotch Bar Cake", category: "Desserts", price: "100", desc: "Sweet bar cake layered with crunch butterscotch chips and caramel frosting.", img: "images/cat_desserts.jpg" },
 
       // TARTS (All Fav: 35, Large: 60)
@@ -2030,7 +2030,7 @@ function initAdminSystem() {
 }
 
 function renderCatalog() {
-  const catalogKey = 'theheavencakes_catalog_v10';
+  const catalogKey = 'theheavencakes_catalog_v11';
   let catalog = globalInitialItems;
   try {
     const catalogJson = safeStorage.getItem(catalogKey);
