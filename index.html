@@ -141,7 +141,8 @@
         </div>
 
         <div class="featured-pills">
-          <button class="filter-pill active" onclick="filterCategory(this, 'Classic Cakes')">Classic Cakes</button>
+          <button class="filter-pill active" onclick="filterCategory(this, 'all')">All Cakes</button>
+          <button class="filter-pill" onclick="filterCategory(this, 'Classic Cakes')">Classic Cakes</button>
           <button class="filter-pill" onclick="filterCategory(this, 'Premium Cakes')">Premium Cakes</button>
           <button class="filter-pill" onclick="filterCategory(this, 'Exotic Cakes')">Exotic Cakes</button>
           <button class="filter-pill" onclick="filterCategory(this, 'Premium Choco Cakes')">Premium Choco Cakes</button>
@@ -159,7 +160,8 @@
 
       <!-- Responsive Product Grid -->
       <div class="products-grid" id="products-grid">
-        <!-- Cake 1: Choco Truffle -->
+
+        <!-- 1. Choco Truffle -->
         <article class="product-card reveal reveal-up" data-category="Premium Choco Cakes" data-name="Choco Truffle">
           <div class="product-img-wrapper">
             <img src="cakeimages/Chocolate Truffle (2).png" alt="Choco Truffle Cake image">
@@ -167,7 +169,7 @@
           </div>
           <div class="product-content">
             <h3 class="product-name">Choco Truffle</h3>
-            <p class="product-desc">Rich chocolate sponge layered with dense chocolate ganache and chocolate chips.</p>
+            <p class="product-desc">Rich chocolate sponge layered with dense dark chocolate ganache and cocoa nibs.</p>
             <div class="card-size-selector">
               <button type="button" class="size-pill" onclick="changeCardSize(this, '0', 'Half Kg', '', 'Half Kg', 'Choco Truffle', 'cakeimages/Chocolate Truffle (2).png', 'Premium Choco Cakes')">Half Kg</button>
               <button type="button" class="size-pill active" onclick="changeCardSize(this, '0', '1 Kg', '', '1 kg', 'Choco Truffle', 'cakeimages/Chocolate Truffle (2).png', 'Premium Choco Cakes')">1 Kg</button>
@@ -179,7 +181,7 @@
           </div>
         </article>
 
-        <!-- Cake 2: Red Velvet -->
+        <!-- 2. Red Velvet -->
         <article class="product-card reveal reveal-up delay-1" data-category="Premium Exotic" data-name="Red Velvet">
           <div class="product-img-wrapper">
             <img src="cakeimages/Red Velvet.png" alt="Red Velvet Cake image">
@@ -199,57 +201,38 @@
           </div>
         </article>
 
-        <!-- Cake 3: Lotus Biscoff Cheesecake -->
-        <article class="product-card reveal reveal-up delay-2" data-category="Cheese Cakes" data-name="Lotus Biscoff Cheesecake">
+        <!-- 3. New York Cheesecake -->
+        <article class="product-card reveal reveal-up delay-2" data-category="Cheese Cakes" data-name="New York Cheesecake">
           <div class="product-img-wrapper">
-            <img src="images/cat_photo.jpg" alt="Lotus Biscoff Cheesecake image">
+            <img src="cakeimages/Cheese cake.png" alt="New York Cheesecake image">
             <span class="product-badge">New Arrival</span>
           </div>
           <div class="product-content">
-            <h3 class="product-name">Lotus Biscoff Cheesecake</h3>
-            <p class="product-desc">Silky smooth New York style cheesecake topped with premium Lotus Biscoff spread and cookie crumbs.</p>
+            <h3 class="product-name">New York Cheesecake</h3>
+            <p class="product-desc">Silky smooth rich cheesecake baked to perfection on a crunchy butter cookie crust.</p>
             <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '2', 'Half Kg', '', 'Half Kg', 'Lotus Biscoff Cheesecake', 'images/cat_photo.jpg', 'Cheese Cakes')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '2', '1 Kg', '', '1 kg', 'Lotus Biscoff Cheesecake', 'images/cat_photo.jpg', 'Cheese Cakes')">1 Kg</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '2', 'Pastry', '', 'Pastry', 'Lotus Biscoff Cheesecake', 'images/cat_photo.jpg', 'Cheese Cakes')">Pastry</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '2', 'Half Kg', '', 'Half Kg', 'New York Cheesecake', 'cakeimages/Cheese cake.png', 'Cheese Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '2', '1 Kg', '', '1 kg', 'New York Cheesecake', 'cakeimages/Cheese cake.png', 'Cheese Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '2', 'Pastry', '', 'Pastry', 'New York Cheesecake', 'cakeimages/Cheese cake.png', 'Cheese Cakes')">Pastry</button>
             </div>
             <div class="product-footer">
-              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Lotus Biscoff Cheesecake', '', 'images/cat_photo.jpg', '1 kg', 'Cheese Cakes')">Order Now</button>
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('New York Cheesecake', '', 'cakeimages/Cheese cake.png', '1 kg', 'Cheese Cakes')">Order Now</button>
             </div>
           </div>
         </article>
 
-        <!-- Cake 4: Butterscotch -->
-        <article class="product-card reveal reveal-up delay-3" data-category="Premium Cakes" data-name="Butterscotch">
-          <div class="product-img-wrapper">
-            <img src="images/about_display.jpg" alt="Butterscotch Cake image">
-          </div>
-          <div class="product-content">
-            <h3 class="product-name">Butterscotch</h3>
-            <p class="product-desc">Soft vanilla sponge layered with caramelized butterscotch chips and fresh buttercream.</p>
-            <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '3', 'Half Kg', '', 'Half Kg', 'Butterscotch', 'images/about_display.jpg', 'Premium Cakes')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '3', '1 Kg', '', '1 kg', 'Butterscotch', 'images/about_display.jpg', 'Premium Cakes')">1 Kg</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '3', 'Pastry', '', 'Pastry', 'Butterscotch', 'images/about_display.jpg', 'Premium Cakes')">Pastry</button>
-            </div>
-            <div class="product-footer">
-              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Butterscotch', '', 'images/about_display.jpg', '1 kg', 'Premium Cakes')">Order Now</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Cake 5: Black Forest -->
-        <article class="product-card reveal reveal-up" data-category="Classic Cakes" data-name="Black Forest">
+        <!-- 4. Black Forest -->
+        <article class="product-card reveal reveal-up delay-3" data-category="Classic Cakes" data-name="Black Forest">
           <div class="product-img-wrapper">
             <img src="cakeimages/Black Forest.png" alt="Black Forest Cake image">
           </div>
           <div class="product-content">
             <h3 class="product-name">Black Forest</h3>
-            <p class="product-desc">Traditional German chocolate sponge layered with whipped cream, cherries, and dark chocolate flakes.</p>
+            <p class="product-desc">Traditional German chocolate sponge layered with fresh whipped cream, cherries, and chocolate flakes.</p>
             <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '4', 'Half Kg', '', 'Half Kg', 'Black Forest', 'cakeimages/Black Forest.png', 'Classic Cakes')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '4', '1 Kg', '', '1 kg', 'Black Forest', 'cakeimages/Black Forest.png', 'Classic Cakes')">1 Kg</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '4', 'Pastry', '', 'Pastry', 'Black Forest', 'cakeimages/Black Forest.png', 'Classic Cakes')">Pastry</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '3', 'Half Kg', '', 'Half Kg', 'Black Forest', 'cakeimages/Black Forest.png', 'Classic Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '3', '1 Kg', '', '1 kg', 'Black Forest', 'cakeimages/Black Forest.png', 'Classic Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '3', 'Pastry', '', 'Pastry', 'Black Forest', 'cakeimages/Black Forest.png', 'Classic Cakes')">Pastry</button>
             </div>
             <div class="product-footer">
               <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Black Forest', '', 'cakeimages/Black Forest.png', '1 kg', 'Classic Cakes')">Order Now</button>
@@ -257,8 +240,8 @@
           </div>
         </article>
 
-        <!-- Cake 6: Vancho -->
-        <article class="product-card reveal reveal-up delay-1" data-category="Exotic Cakes" data-name="Vancho">
+        <!-- 5. Vancho -->
+        <article class="product-card reveal reveal-up" data-category="Exotic Cakes" data-name="Vancho">
           <div class="product-img-wrapper">
             <img src="cakeimages/Vancho.png" alt="Vancho Cake image">
           </div>
@@ -266,9 +249,9 @@
             <h3 class="product-name">Vancho</h3>
             <p class="product-desc">A perfect blend of vanilla and chocolate sponge layered with white and dark chocolate ganache.</p>
             <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '5', 'Half Kg', '', 'Half Kg', 'Vancho', 'cakeimages/Vancho.png', 'Exotic Cakes')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '5', '1 Kg', '', '1 kg', 'Vancho', 'cakeimages/Vancho.png', 'Exotic Cakes')">1 Kg</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '5', 'Pastry', '', 'Pastry', 'Vancho', 'cakeimages/Vancho.png', 'Exotic Cakes')">Pastry</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '4', 'Half Kg', '', 'Half Kg', 'Vancho', 'cakeimages/Vancho.png', 'Exotic Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '4', '1 Kg', '', '1 kg', 'Vancho', 'cakeimages/Vancho.png', 'Exotic Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '4', 'Pastry', '', 'Pastry', 'Vancho', 'cakeimages/Vancho.png', 'Exotic Cakes')">Pastry</button>
             </div>
             <div class="product-footer">
               <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Vancho', '', 'cakeimages/Vancho.png', '1 kg', 'Exotic Cakes')">Order Now</button>
@@ -276,7 +259,264 @@
           </div>
         </article>
 
-        <!-- Cake 7: Nuttela Hazel Nut -->
+        <!-- 6. Blueberry Special -->
+        <article class="product-card reveal reveal-up delay-1" data-category="Premium Cakes" data-name="Blueberry Special">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Blueberry.png" alt="Blueberry Special Cake image">
+            <span class="product-badge">Fresh Berry</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Blueberry Special</h3>
+            <p class="product-desc">Light vanilla sponge filled with sweet and tangy imported wild blueberry compote and whipped cream.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '5', 'Half Kg', '', 'Half Kg', 'Blueberry Special', 'cakeimages/Blueberry.png', 'Premium Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '5', '1 Kg', '', '1 kg', 'Blueberry Special', 'cakeimages/Blueberry.png', 'Premium Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '5', 'Pastry', '', 'Pastry', 'Blueberry Special', 'cakeimages/Blueberry.png', 'Premium Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Blueberry Special', '', 'cakeimages/Blueberry.png', '1 kg', 'Premium Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Chocolate Crunch -->
+        <article class="product-card reveal reveal-up delay-2" data-category="Premium Choco Cakes" data-name="Chocolate Crunch">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Chocolate Crunch.png" alt="Chocolate Crunch Cake image">
+            <span class="product-badge">Crispy Crunch</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Chocolate Crunch</h3>
+            <p class="product-desc">Decadent chocolate sponge layered with crisp praline crunch and velvety cocoa ganache.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '6', 'Half Kg', '', 'Half Kg', 'Chocolate Crunch', 'cakeimages/Chocolate Crunch.png', 'Premium Choco Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '6', '1 Kg', '', '1 kg', 'Chocolate Crunch', 'cakeimages/Chocolate Crunch.png', 'Premium Choco Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '6', 'Pastry', '', 'Pastry', 'Chocolate Crunch', 'cakeimages/Chocolate Crunch.png', 'Premium Choco Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Chocolate Crunch', '', 'cakeimages/Chocolate Crunch.png', '1 kg', 'Premium Choco Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Chocolate Excess -->
+        <article class="product-card reveal reveal-up delay-3" data-category="Premium Choco Cakes" data-name="Chocolate Excess">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Chocolate Excess.png" alt="Chocolate Excess Cake image">
+            <span class="product-badge">Choco Lover</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Chocolate Excess</h3>
+            <p class="product-desc">Pure chocolate indulgence loaded with dark chocolate fudge, rich cocoa frosting, and chocolate curls.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '7', 'Half Kg', '', 'Half Kg', 'Chocolate Excess', 'cakeimages/Chocolate Excess.png', 'Premium Choco Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '7', '1 Kg', '', '1 kg', 'Chocolate Excess', 'cakeimages/Chocolate Excess.png', 'Premium Choco Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '7', 'Pastry', '', 'Pastry', 'Chocolate Excess', 'cakeimages/Chocolate Excess.png', 'Premium Choco Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Chocolate Excess', '', 'cakeimages/Chocolate Excess.png', '1 kg', 'Premium Choco Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Chocolate Fantasy -->
+        <article class="product-card reveal reveal-up" data-category="Premium Choco Cakes" data-name="Chocolate Fantasy">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Chocolate Fantasy.png" alt="Chocolate Fantasy Cake image">
+            <span class="product-badge">Trending</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Chocolate Fantasy</h3>
+            <p class="product-desc">A dreamy creation of soft chocolate sponge infused with chocolate fudge and silky smooth frosting.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '8', 'Half Kg', '', 'Half Kg', 'Chocolate Fantasy', 'cakeimages/Chocolate Fantasy.png', 'Premium Choco Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '8', '1 Kg', '', '1 kg', 'Chocolate Fantasy', 'cakeimages/Chocolate Fantasy.png', 'Premium Choco Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '8', 'Pastry', '', 'Pastry', 'Chocolate Fantasy', 'cakeimages/Chocolate Fantasy.png', 'Premium Choco Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Chocolate Fantasy', '', 'cakeimages/Chocolate Fantasy.png', '1 kg', 'Premium Choco Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Chocolate Vanilla -->
+        <article class="product-card reveal reveal-up delay-1" data-category="Classic Cakes" data-name="Chocolate Vanilla">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Chocolate Vanila.png" alt="Chocolate Vanilla Cake image">
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Chocolate Vanilla</h3>
+            <p class="product-desc">Delightful dual layers of fragrant vanilla and rich chocolate sponge filled with velvety cream.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '9', 'Half Kg', '', 'Half Kg', 'Chocolate Vanilla', 'cakeimages/Chocolate Vanila.png', 'Classic Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '9', '1 Kg', '', '1 kg', 'Chocolate Vanilla', 'cakeimages/Chocolate Vanila.png', 'Classic Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '9', 'Pastry', '', 'Pastry', 'Chocolate Vanilla', 'cakeimages/Chocolate Vanila.png', 'Classic Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Chocolate Vanilla', '', 'cakeimages/Chocolate Vanila.png', '1 kg', 'Classic Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Honey Cake -->
+        <article class="product-card reveal reveal-up delay-2" data-category="Classic Cakes" data-name="Honey Cake">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Honey Cake.png" alt="Honey Cake image">
+            <span class="product-badge">Popular</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Honey Cake</h3>
+            <p class="product-desc">Traditional moist honey-soaked sponge layers filled with whipped cream and golden honey drizzle.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '10', 'Half Kg', '', 'Half Kg', 'Honey Cake', 'cakeimages/Honey Cake.png', 'Classic Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '10', '1 Kg', '', '1 kg', 'Honey Cake', 'cakeimages/Honey Cake.png', 'Classic Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '10', 'Pastry', '', 'Pastry', 'Honey Cake', 'cakeimages/Honey Cake.png', 'Classic Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Honey Cake', '', 'cakeimages/Honey Cake.png', '1 kg', 'Classic Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Nutty Bubble -->
+        <article class="product-card reveal reveal-up delay-3" data-category="Premium Exotic" data-name="Nutty Bubble">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Nuutty Bubble.png" alt="Nutty Bubble Cake image">
+            <span class="product-badge">Chef Special</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Nutty Bubble</h3>
+            <p class="product-desc">Indulgent chocolate cake topped with roasted hazelnut bubbles, caramel drizzle, and crunchy praline.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '11', 'Half Kg', '', 'Half Kg', 'Nutty Bubble', 'cakeimages/Nuutty Bubble.png', 'Premium Exotic')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '11', '1 Kg', '', '1 kg', 'Nutty Bubble', 'cakeimages/Nuutty Bubble.png', 'Premium Exotic')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '11', 'Pastry', '', 'Pastry', 'Nutty Bubble', 'cakeimages/Nuutty Bubble.png', 'Premium Exotic')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Nutty Bubble', '', 'cakeimages/Nuutty Bubble.png', '1 kg', 'Premium Exotic')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Rasmalai Fusion -->
+        <article class="product-card reveal reveal-up" data-category="Premium Exotic" data-name="Rasmalai Fusion">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Rasmalai (2).png" alt="Rasmalai Fusion Cake image">
+            <span class="product-badge">Indian Fusion</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Rasmalai Fusion</h3>
+            <p class="product-desc">Cardamom-spiced sponge soaked in saffron milk, garnished with authentic Rasmalai pieces and pistachios.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '12', 'Half Kg', '', 'Half Kg', 'Rasmalai Fusion', 'cakeimages/Rasmalai (2).png', 'Premium Exotic')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '12', '1 Kg', '', '1 kg', 'Rasmalai Fusion', 'cakeimages/Rasmalai (2).png', 'Premium Exotic')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '12', 'Pastry', '', 'Pastry', 'Rasmalai Fusion', 'cakeimages/Rasmalai (2).png', 'Premium Exotic')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Rasmalai Fusion', '', 'cakeimages/Rasmalai (2).png', '1 kg', 'Premium Exotic')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14. Roasted Almond -->
+        <article class="product-card reveal reveal-up delay-1" data-category="Exotic Cakes" data-name="Roasted Almond">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Roasted Almond.png" alt="Roasted Almond Cake image">
+            <span class="product-badge">Nutty Delight</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Roasted Almond</h3>
+            <p class="product-desc">Delicate sponge cake loaded with slow-roasted crunchy almonds and light vanilla whipped cream.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '13', 'Half Kg', '', 'Half Kg', 'Roasted Almond', 'cakeimages/Roasted Almond.png', 'Exotic Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '13', '1 Kg', '', '1 kg', 'Roasted Almond', 'cakeimages/Roasted Almond.png', 'Exotic Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '13', 'Pastry', '', 'Pastry', 'Roasted Almond', 'cakeimages/Roasted Almond.png', 'Exotic Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Roasted Almond', '', 'cakeimages/Roasted Almond.png', '1 kg', 'Exotic Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15. Swiss Chocolate -->
+        <article class="product-card reveal reveal-up delay-2" data-category="Premium Choco Cakes" data-name="Swiss Chocolate">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Swiss Chocolate (2).png" alt="Swiss Chocolate Cake image">
+            <span class="product-badge">Premium</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Swiss Chocolate</h3>
+            <p class="product-desc">Authentic Swiss chocolate ganache layered between soft cocoa sponge for an exquisite melt-in-mouth texture.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '14', 'Half Kg', '', 'Half Kg', 'Swiss Chocolate', 'cakeimages/Swiss Chocolate (2).png', 'Premium Choco Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '14', '1 Kg', '', '1 kg', 'Swiss Chocolate', 'cakeimages/Swiss Chocolate (2).png', 'Premium Choco Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '14', 'Pastry', '', 'Pastry', 'Swiss Chocolate', 'cakeimages/Swiss Chocolate (2).png', 'Premium Choco Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Swiss Chocolate', '', 'cakeimages/Swiss Chocolate (2).png', '1 kg', 'Premium Choco Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16. Tender Coconut -->
+        <article class="product-card reveal reveal-up delay-3" data-category="Exotic Cakes" data-name="Tender Coconut">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/Tender Coconut.png" alt="Tender Coconut Cake image">
+            <span class="product-badge">Customer Fav</span>
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Tender Coconut</h3>
+            <p class="product-desc">Refreshing cake crafted with real tender coconut pulp, coconut milk cream, and light vanilla sponge.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '15', 'Half Kg', '', 'Half Kg', 'Tender Coconut', 'cakeimages/Tender Coconut.png', 'Exotic Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '15', '1 Kg', '', '1 kg', 'Tender Coconut', 'cakeimages/Tender Coconut.png', 'Exotic Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '15', 'Pastry', '', 'Pastry', 'Tender Coconut', 'cakeimages/Tender Coconut.png', 'Exotic Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Tender Coconut', '', 'cakeimages/Tender Coconut.png', '1 kg', 'Exotic Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 17. Classic Vanilla -->
+        <article class="product-card reveal reveal-up" data-category="Classic Cakes" data-name="Classic Vanilla">
+          <div class="product-img-wrapper">
+            <img src="cakeimages/vanilla.jpeg" alt="Classic Vanilla Cake image">
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Classic Vanilla</h3>
+            <p class="product-desc">Timeless soft vanilla sponge cake decorated with fresh whipped cream and delicate vanilla piping.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '16', 'Half Kg', '', 'Half Kg', 'Classic Vanilla', 'cakeimages/vanilla.jpeg', 'Classic Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '16', '1 Kg', '', '1 kg', 'Classic Vanilla', 'cakeimages/vanilla.jpeg', 'Classic Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '16', 'Pastry', '', 'Pastry', 'Classic Vanilla', 'cakeimages/vanilla.jpeg', 'Classic Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Classic Vanilla', '', 'cakeimages/vanilla.jpeg', '1 kg', 'Classic Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 18. Butterscotch -->
+        <article class="product-card reveal reveal-up delay-1" data-category="Premium Cakes" data-name="Butterscotch">
+          <div class="product-img-wrapper">
+            <img src="images/about_display.jpg" alt="Butterscotch Cake image">
+          </div>
+          <div class="product-content">
+            <h3 class="product-name">Butterscotch</h3>
+            <p class="product-desc">Soft vanilla sponge layered with caramelized butterscotch chips and fresh buttercream.</p>
+            <div class="card-size-selector">
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '17', 'Half Kg', '', 'Half Kg', 'Butterscotch', 'images/about_display.jpg', 'Premium Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '17', '1 Kg', '', '1 kg', 'Butterscotch', 'images/about_display.jpg', 'Premium Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '17', 'Pastry', '', 'Pastry', 'Butterscotch', 'images/about_display.jpg', 'Premium Cakes')">Pastry</button>
+            </div>
+            <div class="product-footer">
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Butterscotch', '', 'images/about_display.jpg', '1 kg', 'Premium Cakes')">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 19. Nuttela Hazel Nut -->
         <article class="product-card reveal reveal-up delay-2" data-category="Premium Exotic" data-name="Nuttela Hazel Nut">
           <div class="product-img-wrapper">
             <img src="images/cat_birthday.jpg" alt="Nuttela Hazel Nut Cake image">
@@ -286,9 +526,9 @@
             <h3 class="product-name">Nuttela Hazel Nut</h3>
             <p class="product-desc">Rich chocolate sponge infused with genuine Nutella spread and crunchy roasted hazelnuts.</p>
             <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '6', 'Half Kg', '', 'Half Kg', 'Nuttela Hazel Nut', 'images/cat_birthday.jpg', 'Premium Exotic')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '6', '1 Kg', '', '1 kg', 'Nuttela Hazel Nut', 'images/cat_birthday.jpg', 'Premium Exotic')">1 Kg</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '6', 'Pastry', '', 'Pastry', 'Nuttela Hazel Nut', 'images/cat_birthday.jpg', 'Premium Exotic')">Pastry</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '18', 'Half Kg', '', 'Half Kg', 'Nuttela Hazel Nut', 'images/cat_birthday.jpg', 'Premium Exotic')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '18', '1 Kg', '', '1 kg', 'Nuttela Hazel Nut', 'images/cat_birthday.jpg', 'Premium Exotic')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '18', 'Pastry', '', 'Pastry', 'Nuttela Hazel Nut', 'images/cat_birthday.jpg', 'Premium Exotic')">Pastry</button>
             </div>
             <div class="product-footer">
               <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Nuttela Hazel Nut', '', 'images/cat_birthday.jpg', '1 kg', 'Premium Exotic')">Order Now</button>
@@ -296,26 +536,26 @@
           </div>
         </article>
 
-        <!-- Cake 8: Blue Berry -->
-        <article class="product-card reveal reveal-up delay-3" data-category="Premium Cakes" data-name="Blue Berry">
+        <!-- 20. Ferror Rocher -->
+        <article class="product-card reveal reveal-up delay-3" data-category="Premium Exotic" data-name="Ferror Rocher">
           <div class="product-img-wrapper">
-            <img src="images/prod_strawberry.jpg" alt="Blue Berry Cake image">
+            <img src="images/cat_cookies.jpg" alt="Ferror Rocher Cake image">
           </div>
           <div class="product-content">
-            <h3 class="product-name">Blue Berry</h3>
-            <p class="product-desc">Light vanilla sponge filled with sweet and tangy imported wild blueberry compote.</p>
+            <h3 class="product-name">Ferror Rocher</h3>
+            <p class="product-desc">Delectable premium chocolate sponge layered with hazelnut cream and topped with original Ferrero Rocher.</p>
             <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '7', 'Half Kg', '', 'Half Kg', 'Blue Berry', 'images/prod_strawberry.jpg', 'Premium Cakes')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '7', '1 Kg', '', '1 kg', 'Blue Berry', 'images/prod_strawberry.jpg', 'Premium Cakes')">1 Kg</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '7', 'Pastry', '', 'Pastry', 'Blue Berry', 'images/prod_strawberry.jpg', 'Premium Cakes')">Pastry</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '19', 'Half Kg', '', 'Half Kg', 'Ferror Rocher', 'images/cat_cookies.jpg', 'Premium Exotic')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '19', '1 Kg', '', '1 kg', 'Ferror Rocher', 'images/cat_cookies.jpg', 'Premium Exotic')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '19', 'Pastry', '', 'Pastry', 'Ferror Rocher', 'images/cat_cookies.jpg', 'Premium Exotic')">Pastry</button>
             </div>
             <div class="product-footer">
-              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Blue Berry', '', 'images/prod_strawberry.jpg', '1 kg', 'Premium Cakes')">Order Now</button>
+              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Ferror Rocher', '', 'images/cat_cookies.jpg', '1 kg', 'Premium Exotic')">Order Now</button>
             </div>
           </div>
         </article>
 
-        <!-- Cake 9: Red Velvet Cup Cake -->
+        <!-- 21. Red Velvet Cup Cake -->
         <article class="product-card reveal reveal-up" data-category="Cupcakes" data-name="Red Velvet Cup Cake">
           <div class="product-img-wrapper">
             <img src="images/cat_cupcakes.jpg" alt="Red Velvet Cup Cake image">
@@ -324,9 +564,9 @@
             <h3 class="product-name">Red Velvet Cup Cake</h3>
             <p class="product-desc">Freshly baked premium Red Velvet cupcake topped with silky cream cheese frosting.</p>
             <div class="card-size-selector">
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '8', 'Regular', '', 'Regular', 'Red Velvet Cup Cake', 'images/cat_cupcakes.jpg', 'Cupcakes')">Regular</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '8', 'Large', '', 'Large', 'Red Velvet Cup Cake', 'images/cat_cupcakes.jpg', 'Cupcakes')">Large</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '8', 'Customized', '', 'Customized', 'Red Velvet Cup Cake', 'images/cat_cupcakes.jpg', 'Cupcakes')">Customized</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '20', 'Regular', '', 'Regular', 'Red Velvet Cup Cake', 'images/cat_cupcakes.jpg', 'Cupcakes')">Regular</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '20', 'Large', '', 'Large', 'Red Velvet Cup Cake', 'images/cat_cupcakes.jpg', 'Cupcakes')">Large</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '20', 'Customized', '', 'Customized', 'Red Velvet Cup Cake', 'images/cat_cupcakes.jpg', 'Cupcakes')">Customized</button>
             </div>
             <div class="product-footer">
               <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Red Velvet Cup Cake', '', 'images/cat_cupcakes.jpg', 'Regular', 'Cupcakes')">Order Now</button>
@@ -334,27 +574,8 @@
           </div>
         </article>
 
-        <!-- Cake 10: Ferror Rocher -->
-        <article class="product-card reveal reveal-up delay-1" data-category="Premium Exotic" data-name="Ferror Rocher">
-          <div class="product-img-wrapper">
-            <img src="images/cat_cookies.jpg" alt="Ferror Rocher Cake image">
-          </div>
-          <div class="product-content">
-            <h3 class="product-name">Ferror Rocher</h3>
-            <p class="product-desc">Delectable premium chocolate sponge layered with hazelnut cream and topped with original Ferrero Rocher.</p>
-            <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '9', 'Half Kg', '', 'Half Kg', 'Ferror Rocher', 'images/cat_cookies.jpg', 'Premium Exotic')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '9', '1 Kg', '', '1 kg', 'Ferror Rocher', 'images/cat_cookies.jpg', 'Premium Exotic')">1 Kg</button>
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '9', 'Pastry', '', 'Pastry', 'Ferror Rocher', 'images/cat_cookies.jpg', 'Premium Exotic')">Pastry</button>
-            </div>
-            <div class="product-footer">
-              <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Ferror Rocher', '', 'images/cat_cookies.jpg', '1 kg', 'Premium Exotic')">Order Now</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Cake 11: Walnut Brownie -->
-        <article class="product-card reveal reveal-up delay-2" data-category="Desserts" data-name="Walnut Brownie">
+        <!-- 22. Walnut Brownie -->
+        <article class="product-card reveal reveal-up delay-1" data-category="Desserts" data-name="Walnut Brownie">
           <div class="product-img-wrapper">
             <img src="images/cat_brownies.jpg" alt="Walnut Brownie image">
             <span class="product-badge">Sweet treat</span>
@@ -368,8 +589,8 @@
           </div>
         </article>
 
-        <!-- Cake 12: Photo Cake -->
-        <article class="product-card reveal reveal-up delay-3" data-category="Custom Cakes" data-name="Photo Cake">
+        <!-- 23. Photo Cake -->
+        <article class="product-card reveal reveal-up delay-2" data-category="Custom Cakes" data-name="Photo Cake">
           <div class="product-img-wrapper">
             <img src="images/cat_photo.jpg" alt="Photo Cake image">
             <span class="product-badge">Custom</span>
@@ -378,8 +599,8 @@
             <h3 class="product-name">Photo Cake</h3>
             <p class="product-desc">Send us any photo or artwork and we will print it in edible sugar sheets on your choice of flavor.</p>
             <div class="card-size-selector">
-              <button type="button" class="size-pill" onclick="changeCardSize(this, '11', 'Half Kg', '', 'Half Kg', 'Photo Cake', 'images/cat_photo.jpg', 'Custom Cakes')">Half Kg</button>
-              <button type="button" class="size-pill active" onclick="changeCardSize(this, '11', '1 Kg', '', '1 kg', 'Photo Cake', 'images/cat_photo.jpg', 'Custom Cakes')">1 Kg</button>
+              <button type="button" class="size-pill" onclick="changeCardSize(this, '22', 'Half Kg', '', 'Half Kg', 'Photo Cake', 'images/cat_photo.jpg', 'Custom Cakes')">Half Kg</button>
+              <button type="button" class="size-pill active" onclick="changeCardSize(this, '22', '1 Kg', '', '1 kg', 'Photo Cake', 'images/cat_photo.jpg', 'Custom Cakes')">1 Kg</button>
             </div>
             <div class="product-footer">
               <button class="btn btn-primary product-btn-order" style="width: 100%; justify-content: center;" onclick="openOrderModal('Photo Cake', '', 'images/cat_photo.jpg', '1 kg', 'Custom Cakes')">Order Now</button>
