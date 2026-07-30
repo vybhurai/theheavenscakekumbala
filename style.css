@@ -435,6 +435,26 @@ header.sticky .nav-logo-img {
   font-size: 0.85rem;
 }
 
+.nav-btn-menu {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+}
+
+.nav-btn-menu:hover {
+  background-color: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+
 /* Mobile-only and Desktop-only helpers */
 .mobile-only {
   display: none !important;
