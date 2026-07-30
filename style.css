@@ -347,6 +347,21 @@ header:not(.sticky) .mobile-nav-toggle span {
   transition: var(--transition-smooth);
 }
 
+header:not(.sticky) .logo {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 12px rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+header.sticky .logo {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
 .nav-logo-img {
   height: 60px; /* Slimmer logo for desktop elegance */
   width: auto;
