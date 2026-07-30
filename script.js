@@ -1240,7 +1240,7 @@ function initBoutiqueMoodSelector() {
   const HERO_MOODS = {
     classic: {
       title: 'Every Celebration Begins With <span class="title-highlight">Heaven</span>',
-      desc: 'Artisanal cakes meticulously designed and baked daily using premium natural ingredients. Elevating your special occasions with absolute culinary elegance.',
+      desc: 'Heaven Cakes – Premium Cake Shop in Kumbala, Kasaragod. Freshly baked birthday cakes, wedding cakes, anniversary cakes, custom designer cakes, and celebration cakes made with the finest ingredients.',
       mainImg: 'images/hero_cake.jpg',
       videoLocal: 'video/make_a_video_for_this_to_put_i.mp4',
       videoBackup: 'https://videos.pexels.com/video-files/3125396/3125396-sd_540_960_25fps.mp4',
